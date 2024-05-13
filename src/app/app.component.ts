@@ -5,9 +5,22 @@ import { RouterOutlet } from '@angular/router';
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  template: `
+    <div
+      class="w-full sm:w-auto sm:h-auto h-full p-5 rounded-lg drop-shadow bg-neutral-100"
+    >
+      <h1 class="font-mono text-3xl text-center mb-5">Rock Paper Scissors</h1>
+      <router-outlet />
+    </div>
+  `,
+  styles: `
+    :host {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  `
 })
-export class AppComponent {
-  title = 'rock-paper-scissors';
-}
+export class AppComponent { }
